@@ -97,7 +97,7 @@ function key(k){if(!p4.classList.contains('on')||busy)return;if(k=='b')pin=pin.s
 function chk(){busy=true;if(pin=='170408')ok();else{say($('#pm'),'EITS, SALAH NIH WKWKWK. COBA LAGI YUK. 😹');pd.classList.add('sh');setTimeout(()=>{pd.classList.remove('sh');pin='';upd();busy=false},650)}}
 [1,2,3,4,5,6,7,8,9,'b',0,''].forEach(k=>{const b=document.createElement('button');if(k===''){b.style.visibility='hidden';b.tabIndex=-1}else{b.className='k glass';b.textContent=k=='b'?'⌫':k;b.setAttribute('aria-label',k=='b'?'Hapus':'Angka '+k);b.onclick=()=>key(String(k))}$('#pad').append(b)});
 addEventListener('keydown',e=>{if(/^\d$/.test(e.key))key(e.key);else if(e.key=='Backspace')key('b')});
-$('#fg').onclick=()=>say($('#pm'),['clue nya mau tau? aja sendiri '][hn++%2]+'😹');
+$('#fg').onclick=()=>say($('#pm'),['clue nya mau tau? aja sendiri, ga lohh, clue nya tentang mu '][hn++%2]+'😹');
 async function ok(){const g=$('#gate');g.classList.add('on');await sleep(200);g.classList.add('open');for(let i=0;i<8;i++)setTimeout(()=>burst(innerWidth/2,innerHeight/2,14,['⭐','✨','💜','🌟']),i*220);await sleep(3000);document.body.classList.remove('lock');go(0);$('#pre').classList.add('out');setTimeout(()=>$('#pre').remove(),1000)}
 /* NGGAA beneran: kesempatan terakhir, lalu selesai */
 async function no3(){if(ans)return;lockQ();$('#hold').classList.add('sad');$('#sign').innerHTML='<p>Hmm... bentar deh.</p><h3>Srius ni ga sayank aku? 🥺</h3>';await lines(m4,['Yah... beneran nggaa? 🥺','Satu kesempatan lagi deh. Cuma satu, jawab yang jujur yaa... 🥹'],1600);$('#ch2').hidden=false}
